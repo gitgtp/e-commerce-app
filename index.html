@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Shopkaro.com</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/card/card.css" />
+  </head>
+
+  <body>
+    <!-- //***********Nav bar here**********// -->
+    <nav>
+      <span id="logo-of-shop"><img src="/icons/brand.svg" alt="" /></span>
+
+      <span id="search-bar-div">
+        <input
+          id="searchbar"
+          spellcheck="true"
+          type="search"
+          placeholder="Apple ipad.."
+          name=""
+          id=""
+        />
+        <img src="/icons/search-svgrepo-com.svg" />
+      </span>
+      <div class="search-suggest">
+        <div class="search-suggest-option">
+          Laptop under 20000
+          <img src="icons/cross.svg" alt="" />
+        </div>
+        <div class="search-suggest-option">
+          Motorola <img src="icons/cross.svg" alt="" />
+        </div>
+
+        <div class="search-suggest-option">
+          Infinix Hot 10 <img src="icons/cross.svg" alt="" />
+        </div>
+        <div class="search-suggest-option">
+          Infinix hot 11 <img src="icons/cross.svg" alt="" />
+        </div>
+        <div class="search-suggest-option">
+          Infinix <img src="icons/cross.svg" alt="" />
+        </div>
+        <div class="search-suggest-option">
+          Samsung OLED <img src="icons/cross.svg" alt="" />
+        </div>
+
+        <div class="search-suggest-option">
+          Temples <img src="icons/cross.svg" alt="" />
+        </div>
+      </div>
+
+      <div id="left-nav-cornor">
+        <span id="user-img">
+          <img src="/icons/abstract-user-flat-4.svg" id="user" alt="logo" />
+        </span>
+
+        <div id="user-info-div">
+          <div></div>
+          <div class="user-info-options" id="u-i-o">
+            New Customer?
+            <a href=""> Sign in </a>
+          </div>
+          <div class="user-info-options">
+            <img src="/icons/person-profile-icon.svg" alt="" />
+            My Profile
+          </div>
+          <div class="user-info-options">
+            <img src="/icons/package-box-svgrepo-com.svg" alt="" />
+
+            Orders
+          </div>
+          <div class="user-info-options">
+            <img src="/icons/underline-heart.svg" alt="" />
+
+            Whishlist
+          </div>
+          <div class="user-info-options">
+            <img src="/icons/present-icon.svg" alt="" />
+            Rewards
+          </div>
+          <div class="user-info-options">
+            <img src="/icons/gift-card-icon.svg" alt="" />
+            Gift Cards
+          </div>
+        </div>
+        <span id="cart">
+          <img src="/icons/cart-black-icon.svg" />
+          <p>Cart</p>
+        </span>
+
+        <button id="download-button">
+          <img src="/icons/mobile-app-icon.svg" alt="" />
+          Download App
+        </button>
+
+        <div id="download-div">
+          <div></div>
+          <img src="/icons/app-store.svg" alt="" />
+          <img src="/icons/google-store.svg" alt="" />
+        </div>
+      </div>
+    </nav>
+
+    <!-- ************Main sectiions here********** -->
+    <main>
+      <!-- *********Here is a filter div*********** -->
+      <div id="filterbox">
+        <div id="filterheading">
+          <h1>Filters</h1>
+        </div>
+
+        <div id="filter-selection-box">
+          <!-- **********Here is filter slider and drop down selections***** -->
+          <div id="filter-price">
+            <p>PRICE</p>
+            <input type="range" name="" id="filter-range" />
+
+            <div id="s-r-no">
+              <select name="" id="">
+                <option value="23">500</option>
+              </select>
+
+              <p>to</p>
+
+              <select name="" id="">
+                <option value="23">500</option>
+              </select>
+              <div></div>
+            </div>
+          </div>
+
+          <!-- ******Here are filter-selection-heading with img arraw****** -->
+
+          <!--Brand div-->
+          <div class="box-of-selection-heading" id="Brand-select">
+            <div class="filter-selection-heading">
+              newbrand
+              <img
+                class="options-arrow"
+                src="/icons/chevron-right-svgrepo-com.svg"
+                alt="*"
+              />
+            </div>
+
+            <div class="filter-selection-list">
+              <input
+                id="filter-selection-search"
+                type="search"
+                name=""
+                id=""
+                placeholder="search"
+              />
+
+              <div class="checkbox-or-p-div">
+                <div><input type="checkbox" id="" />oppo</div>
+                <div><input type="checkbox" name="" id="" />vivo</div>
+                <div><input type="checkbox" name="" id="" />realme</div>
+                <div><input type="checkbox" name="" id="" />Apple</div>
+                <div><input type="checkbox" name="" id="" />Oneplus</div>
+
+                <span class="view-more">view more</span>
+
+                <div class="div-for-view-more">
+                  <div><input type="checkbox" id="" />Intex</div>
+                  <div><input type="checkbox" name="" id="" />gionee</div>
+                  <div><input type="checkbox" name="" id="" />samsung</div>
+                  <div><input type="checkbox" name="" id="" />nokia</div>
+                  <div><input type="checkbox" name="" id="" />google</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Storage div-->
+          <div class="box-of-selection-heading" id="Brand-select">
+            <div class="filter-selection-heading">
+              Storage
+              <img
+                class="options-arrow"
+                src="/icons/chevron-right-svgrepo-com.svg"
+                alt="*"
+              />
+            </div>
+
+            <div class="filter-selection-list">
+              <div class="checkbox-or-p-div">
+                <div><input type="checkbox" id="" />16GB</div>
+                <div><input type="checkbox" name="" id="" />32GB</div>
+                <div><input type="checkbox" name="" id="" />64GB</div>
+                <div>
+                  <input type="checkbox" name="" id="" />128GB&nbsp;&&nbsp;Above
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Ram div-->
+          <div class="box-of-selection-heading" id="Brand-select">
+            <div class="filter-selection-heading">
+              Ram
+              <img
+                class="options-arrow"
+                src="/icons/chevron-right-svgrepo-com.svg"
+                alt="*"
+              />
+            </div>
+
+            <div class="filter-selection-list">
+              <div class="checkbox-or-p-div">
+                <div><input type="checkbox" id="" />3GB</div>
+                <div><input type="checkbox" name="" id="" />4GB</div>
+                <div><input type="checkbox" name="" id="" />6GB</div>
+                <div><input type="checkbox" name="" id="" />8GB</div>
+                <div>
+                  <input type="checkbox" name="" id="" />12GB&nbsp;&&nbsp;Above
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--connectivity div-->
+          <div class="box-of-selection-heading" id="Brand-select">
+            <div class="filter-selection-heading">
+              Connectivity
+              <img
+                class="options-arrow"
+                src="/icons/chevron-right-svgrepo-com.svg"
+                alt="*"
+              />
+            </div>
+
+            <div class="filter-selection-list">
+              <div class="checkbox-or-p-div">
+                <div><input type="checkbox" id="" /></div>
+                <div><input type="checkbox" name="" id="" />3G</div>
+                <div><input type="checkbox" name="" id="" />4G</div>
+                <div><input type="checkbox" name="" id="" />5G</div>
+                <div><input type="checkbox" name="" id="" />6G</div>
+              </div>
+            </div>
+          </div>
+
+          <!--Color div-->
+          <div class="box-of-selection-heading" id="Brand-select">
+            <div class="filter-selection-heading">
+              Color
+              <img
+                class="options-arrow"
+                src="/icons/chevron-right-svgrepo-com.svg"
+                alt="*"
+              />
+            </div>
+
+            <div class="filter-selection-list">
+              <div class="checkbox-or-p-div">
+                <div>
+                  <input type="checkbox" name="" id="" />Black
+                  <span
+                    style="left: 65%; background-color: black"
+                    class="oot-color"
+                  ></span>
+                </div>
+
+                <div>
+                  <input type="checkbox" name="" id="" />Blue
+                  <span
+                    style="left: 68%; background-color: rgb(0, 35, 209)"
+                    class="oot-color"
+                  ></span>
+                </div>
+
+                <div>
+                  <input type="checkbox" name="" id="" />White<span
+                    style="left: 64%; background-color: rgb(251, 251, 251)"
+                    class="oot-color"
+                  ></span>
+                </div>
+
+                <div>
+                  <input type="checkbox" name="" id="" />Red<span
+                    style="left: 68%; background-color: rgb(255, 0, 0)"
+                    class="oot-color"
+                  ></span>
+                </div>
+                <div>
+                  <input type="checkbox" name="" id="" />Green
+                  <span
+                    style="left: 61%; background-color: rgb(0, 157, 18)"
+                    class="oot-color"
+                  ></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Processor div-->
+          <div class="box-of-selection-heading" id="Brand-select">
+            <div class="filter-selection-heading">
+              Processor
+              <img
+                class="options-arrow"
+                src="/icons/chevron-right-svgrepo-com.svg"
+                alt="*"
+              />
+            </div>
+
+            <div class="filter-selection-list">
+              <div class="checkbox-or-p-div">
+                <div><input type="checkbox" name="" id="" />Qualcoumm</div>
+                <div><input type="checkbox" name="" id="" />Meditek</div>
+                <div><input type="checkbox" name="" id="" />Exynos</div>
+                <div><input type="checkbox" name="" id="" />Unisoc</div>
+                <div><input type="checkbox" name="" id="" />Apple</div>
+              </div>
+            </div>
+          </div>
+
+          <!--offers div-->
+          <div class="box-of-selection-heading" id="Brand-select">
+            <div class="filter-selection-heading">
+              Offers
+              <img
+                class="options-arrow"
+                src="/icons/chevron-right-svgrepo-com.svg"
+                alt="*"
+              />
+            </div>
+
+            <div class="filter-selection-list">
+              <div class="checkbox-or-p-div">
+                <div><input type="checkbox" id="" />No&nbsp;Cost&nbsp;EMI</div>
+                <div>
+                  <input type="checkbox" name="" id="" />Sepcial&nbsp;offer
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="box-of-product-section">
+        <div id="sortby">
+          Sort by
+          <span class="sort-by-options">
+            Low
+            <img id="l-to-h" src="/icons/sort-svgrepo-com.svg" />
+            High
+          </span>
+          <span class="sort-by-options">
+            High
+            <img id="h-to-l" src="/icons/sort-svgrepo-com.svg" />
+            Low
+          </span>
+          <span class="sort-by-options">Newest</span>
+          <span class="sort-by-options">Popularity</span>
+        </div>
+
+        <div class="products-list" id="products-list"></div>
+      </div>
+    </main>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
