@@ -126,7 +126,12 @@ nav > #search-bar-div > input:focus {
   top: 10%;
   right: 7%;
   height: 40%;
-  outline: 1px solid rgb(225, 225, 225);
+  border-left:1px solid rgb(225,225,225) ;
+  border-right:1px solid rgb(225,225,225) ;
+  border-bottom:1px solid rgb(225,225,225) ;
+  
+  
+  
   background: #ffffff;
   border-radius: 3px;
   z-index: 5;
@@ -436,8 +441,8 @@ main #filterbox {
 #sortby {
   width: 100%;
   height: 50px;
-  background: var(--fav-font);
-  outline: 1px solid rgba(177, 177, 177, 0.7);
+  background: white;
+  outline: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 5px;
   margin-bottom: 5px;
   display: flex;
@@ -465,11 +470,11 @@ main #filterbox {
 }
 #sortby > .change-bg {
   background: #ffffff;
-  border-bottom: 3px solid rgb(0, 158, 34);
+  border-bottom: 3px solid var(--theme-color);
 }
 #sortby > span:hover {
   background: #ffffff;
-  border-bottom: 3px solid rgb(0, 158, 34);
+  border-bottom: 3px solid var(--theme-color);
   cursor: pointer;
 }
 
@@ -494,15 +499,16 @@ main #filterbox {
   height: 50px;
   position: relative;
   border-radius: 5px;
-  outline: 1px solid rgb(231, 229, 229);
-  top: -100%;
+  border-top: 1px solid rgb(218, 217, 217);
+  bottom: 0;
   display: flex;
-  // justify-content:space-evenly;
+  
   align-items: center;
 }
 .pagination > #pagi1 {
   width: 3%;
   height: 50%;
+  margin: 4%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -511,6 +517,7 @@ main #filterbox {
   transform: rotate(180deg);
 }
 .pagiarrow {
+  
   width: 80%;
   height: 70%;
 }
@@ -525,14 +532,15 @@ overflow:hidden;
 #pagi2 > span {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  margin: 0% 1%;
+  
+  padding:4%;
   display: flex;
   justify-content: center;
 
   align-items: center;
   background: rgb(255, 255, 255);
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
 
   font-size: large;
@@ -545,5 +553,6 @@ overflow:hidden;
   display: flex;
   align-items: center;
   width: 3%;
+  margin: 4%;
   height: 50%;
 }

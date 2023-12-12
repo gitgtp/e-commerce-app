@@ -1,3 +1,4 @@
+// funtion for all sorting on htol ltoh etc.
 export default function sort(products) {
   // Sort sectin***************************
 
@@ -42,6 +43,7 @@ export default function sort(products) {
       .sort((a, b) => copyarr[a] - copyarr[b]);
 
     empty_cars_div();
+    document.querySelector("#pagi2").innerHTML = "";
     // Calling createcard function
     createcard(products, indexofarr);
   });
@@ -60,7 +62,9 @@ export default function sort(products) {
       .map((_, index) => index)
       .sort((a, b) => copyarr[b] - copyarr[a]);
 
+    document.querySelector("#pagi2").innerHTML = "";
     empty_cars_div();
+
     // Calling createcard function
     createcard(products, indexofarr1);
   });
@@ -87,93 +91,125 @@ export default function sort(products) {
       .map((_, index) => index)
       .sort((a, b) => copyarr[b] - copyarr[a]);
 
+    document.querySelector("#pagi2").innerHTML = "";
     empty_cars_div();
     // Calling createcard function
     createcard(products, indexofarr3);
   });
-
-  //this function for empty products-list (cards)
-  const empty_cars_div = () => {
-    const productmain = document.querySelector(".products-list");
-    productmain.innerHTML = "";
-  };
 }
 
-export let createcard = function (arr, sortedindex) {
-  if (sortedindex !== undefined) {
-    arr.forEach((value, i) => {
-      const product = document.createElement("div");
-      product.className = "products";
-      const productmain = document.querySelector(".products-list");
-      productmain.appendChild(product);
-      // first span for wishlist img
-      let span = document.createElement("span");
-      span.className = "wishlist";
-      let url = "/icons/underline-heart.svg";
-      let img = document.createElement("img");
-      img.setAttribute("src", url);
-      span.appendChild(img);
+// function activate  when click on pagi no. 
+function pagelimit(SA) {
+  document.querySelector(".products-list").innerHTML=""
+  let wantto_p_onpage=20
+  let totalpage = Math.ceil(SA.length /wantto_p_onpage);
+  let pagediv = document.querySelector("#pagi2");
+  for (let o = 1; o <= totalpage; o++) {
+    let pageno = document.createElement("span");
+    pageno.innerText = o;
+    pagediv.appendChild(pageno);
+  }
+  let pageclick = Array.from(pagediv.children);
+  // Declare rngedp outside the function so it's accessible globally
 
-      product.appendChild(span);
+  pageclick.forEach((value, index) => {
+    
+    value.addEventListener("click", (event) => {
+     
+      empty_cars_div();
 
-      // second div for products img
-      let div2 = document.createElement("div");
-      div2.className = "p-div1";
-      let img2 = document.createElement("img");
-      img2.className = "p-image";
-      let p_url = arr[sortedindex[i]].thumbnail;
-      img2.setAttribute("src", p_url);
-      div2.appendChild(img2);
-      //console.log(div2.innerHTML);
-      product.appendChild(div2);
+      let range = 20;
+      let pagestart = index !== 0 ? index * range : index;
+      let pageend = parseInt(event.target.innerText) * range;
+      let rangedp = SA.slice(pagestart, pageend);
 
-      // third div for products description
-      let div3 = document.createElement("div");
-      div3.className = "p-div2";
-      div3.innerHTML =
-        "<ul> <li></li><li></li><li><img><p></p></li><li><p></p><p></p><li><p></p></li></li><li></li></ul>";
-      div3.children[0].className = "descripition-list";
-      div3.children[0].children[0].className = "p-about";
-      div3.children[0].children[0].innerHTML = arr[sortedindex[i]].description;
+      rangedp.forEach((value, i) => {
+       
+        const product = document.createElement("div");
+        product.className = "products";
+        const productmain = document.querySelector(".products-list");
+        productmain.appendChild(product);
+        // first span for wishlist img
+        let span = document.createElement("span");
+        span.className = "wishlist";
+        let url = "/icons/underline-heart.svg";
+        let img = document.createElement("img");
+        img.setAttribute("src", url);
+        span.appendChild(img);
 
-      div3.children[0].children[1].className = "p-brand";
-      div3.children[0].children[1].innerHTML = arr[sortedindex[i]].brand;
+        product.appendChild(span);
 
-      div3.children[0].children[2].className = "p-rating";
-      div3.children[0].children[2];
+        // second div for products img
+        let div2 = document.createElement("div");
+        div2.className = "p-div1";
+        let img2 = document.createElement("img");
+        img2.className = "p-image";
+        let p_url = value.thumbnail;
+        img2.setAttribute("src", p_url);
+        div2.appendChild(img2);
+        //console.log(div2.innerHTML);
+        product.appendChild(div2);
 
-      div3.children[0].children[2].children[0].className = "p-rate-star";
+        // third div for products description
+        let div3 = document.createElement("div");
+        div3.className = "p-div2";
+        div3.innerHTML =
+          "<ul> <li></li><li></li><li><img><p></p></li><li><p></p><p></p><li><p></p></li></li><li></li></ul>";
+        div3.children[0].className = "descripition-list";
+        div3.children[0].children[0].className = "p-about";
+        div3.children[0].children[0].innerHTML = value.description;
 
-      let p_rate_star = "/icons/img26.webp";
-      div3.children[0].children[2].children[0].setAttribute("src", p_rate_star);
-      div3.children[0].children[2].children[1].className = "p-r-number";
-      div3.children[0].children[2].children[1].innerHTML =
-        arr[sortedindex[i]].rating.toFixed(1);
+        div3.children[0].children[1].className = "p-brand";
+        div3.children[0].children[1].innerHTML = value.brand;
 
-      div3.children[0].children[3].className = "p-price";
+        div3.children[0].children[2].className = "p-rating";
+        div3.children[0].children[2];
 
-      div3.children[0].children[3].children[0].className = "original-price";
-      const oldprice = arr[sortedindex[i]].price * 81;
+        div3.children[0].children[2].children[0].className = "p-rate-star";
 
-      div3.children[0].children[3].children[0].innerHTML = `&#x20B9<strike>${oldprice}</strike>`;
-      div3.children[0].children[3].children[1].className = "discount";
+        let p_rate_star = "/icons/img26.webp";
+        div3.children[0].children[2].children[0].setAttribute(
+          "src",
+          p_rate_star
+        );
+        div3.children[0].children[2].children[1].className = "p-r-number";
+        div3.children[0].children[2].children[1].innerHTML =
+          value.rating.toFixed(1);
 
-      const discountpercent =
-        (arr[sortedindex[i]].discountPercentage - 100) / 100;
-      div3.children[0].children[3].children[1].innerHTML = `${
-        arr[sortedindex[i]].discountPercentage
-      .toFixed(0)}% off`;
-      div3.children[0].children[4].children[0].className = "final-price";
-      const finalprice = `&#x20B9<span>${Math.abs(
-        Math.floor(oldprice * discountpercent)
-      ).toLocaleString("en", "IN")}</span>`;
-      div3.children[0].children[4].children[0].innerHTML = finalprice;
-      div3.children[0].children[5].className = "p-cate";
-      div3.children[0].children[5].innerHTML = arr[sortedindex[i]].category;
-      product.appendChild(div3);
+        div3.children[0].children[3].className = "p-price";
+
+        div3.children[0].children[3].children[0].className =
+          "original-price";
+        const oldprice = value.price * 81;
+
+        div3.children[0].children[3].children[0].innerHTML = `&#x20B9<strike>${oldprice}</strike>`;
+        div3.children[0].children[3].children[1].className = "discount";
+
+        const discountpercent = (value.discountPercentage - 100) / 100;
+        div3.children[0].children[3].children[1].innerHTML = `${value.discountPercentage.toFixed(
+          0
+        )}% off`;
+        div3.children[0].children[4].children[0].className = "final-price";
+        const finalprice = `&#x20B9<span>${Math.abs(
+          Math.floor(oldprice * discountpercent)
+        ).toLocaleString("en", "IN")}</span>`;
+        div3.children[0].children[4].children[0].innerHTML = finalprice;
+        div3.children[0].children[5].className = "p-cate";
+        div3.children[0].children[5].innerHTML = value.category;
+        product.appendChild(div3);
+        
+      });
+      
+      // Resolve the promise with the result
     });
-  } else {
-    arr.forEach((value, i) => {
+  });
+}
+
+// function activate for default products if pagi not active
+function default_P_list(arr){
+  arr.forEach((value, i) => {
+      
+    if(i<20){
       const product = document.createElement("div");
       product.className = "products";
       const productmain = document.querySelector(".products-list");
@@ -219,7 +255,8 @@ export let createcard = function (arr, sortedindex) {
       let p_rate_star = "/icons/img26.webp";
       div3.children[0].children[2].children[0].setAttribute("src", p_rate_star);
       div3.children[0].children[2].children[1].className = "p-r-number";
-      div3.children[0].children[2].children[1].innerHTML = arr[i].rating.toFixed(1);
+      div3.children[0].children[2].children[1].innerHTML =
+        arr[i].rating.toFixed(1);
 
       div3.children[0].children[3].className = "p-price";
 
@@ -230,7 +267,9 @@ export let createcard = function (arr, sortedindex) {
       div3.children[0].children[3].children[1].className = "discount";
 
       const discountpercent = (arr[i].discountPercentage - 100) / 100;
-      div3.children[0].children[3].children[1].innerHTML = `${arr[i].discountPercentage.toFixed(0)}% off`;
+      div3.children[0].children[3].children[1].innerHTML = `${arr[
+        i
+      ].discountPercentage.toFixed(0)}% off`;
       div3.children[0].children[4].children[0].className = "final-price";
       const finalprice = `&#x20B9<span>${Math.abs(
         Math.floor(oldprice * discountpercent)
@@ -239,9 +278,18 @@ export let createcard = function (arr, sortedindex) {
       div3.children[0].children[5].className = "p-cate";
       div3.children[0].children[5].innerHTML = arr[i].category;
       product.appendChild(div3);
-    });
-  }
+      
+    };
+    })
+   
+}
 
+//this function for empty products-list (cards)
+const empty_cars_div = () => {
+  const productmain = document.querySelector(".products-list");
+  productmain.innerHTML = "";
+};
+function creatheart(){
   const heart = document.querySelectorAll(".wishlist");
   heart.forEach((value) => {
     value.addEventListener("click", function () {
@@ -257,4 +305,29 @@ export let createcard = function (arr, sortedindex) {
       }
     });
   });
+
+}
+
+
+// funtcion for creating card 
+export let createcard = function (arr, sortedindex) {
+  
+  if (sortedindex !== undefined) {
+    let sortedarray = [];
+    for (let i = 0; i <= arr.length; i++) {
+      sortedarray[i] = arr[sortedindex[i]];
+    }
+    
+    pagelimit(sortedarray);
+    default_P_list(sortedarray)
+
+
+  } else {
+
+    pagelimit(arr)
+
+    default_P_list(arr)
+  }
+creatheart()
+
 };

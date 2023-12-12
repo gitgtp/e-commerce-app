@@ -116,18 +116,18 @@
           <!-- **********Here is filter slider and drop down selections***** -->
           <div id="filter-price">
             <p>PRICE</p>
-            <input type="range" name="" id="filter-range" />
+            <input type="range" max="100000" min="100" name="" id="filter-range" />
 
             <div id="s-r-no">
-              <select name="" id="">
-                <option value="23">500</option>
-              </select>
+              <div name="" id="lowest">
+                0
+              </div>
 
               <p>to</p>
 
-              <select name="" id="">
-                <option value="23">500</option>
-              </select>
+              <div name="" id="higest">
+                500
+              </div>
               <div></div>
             </div>
           </div>
@@ -359,6 +359,17 @@
         </div>
 
         <div class="products-list" id="products-list"></div>
+
+        <div class="pagination">
+          <div class="pagioptions" id="pagi1">
+            <img src="./icons/next-svgrepo-com.svg" class="pagiarrow" alt="">
+          </div>
+          <div class="pagioptions" id="pagi2"></div>
+          <div class="pagioptions" id="pagi3">
+            <img src="./icons/next-svgrepo-com.svg" class="pagiarrow" alt="">
+          </div>
+        </div>
+    
       </div>
 
 
